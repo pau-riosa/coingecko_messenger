@@ -8,6 +8,11 @@
 import Config
 
 config :coingecko_messenger,
+  verify_token:
+    System.get_env("VERIFY_TOKEN") ||
+      "LihGv2fR3vMsnBnue02Dnma8b2B+O/hpIBRwK1FW1UD9tcBOBhnSryBLFNaSFxDX"
+
+config :coingecko_messenger,
   ecto_repos: [CoingeckoMessenger.Repo]
 
 # Configures the endpoint
