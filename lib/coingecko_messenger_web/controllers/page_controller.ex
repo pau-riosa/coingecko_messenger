@@ -6,7 +6,7 @@ defmodule CoingeckoMessengerWeb.PageController do
   end
 
   def webhook(conn, params) do
-    IO.inspect(params)
+    raise params
     render(conn, "index.html")
   end
 end
