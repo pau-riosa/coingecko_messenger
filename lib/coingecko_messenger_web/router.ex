@@ -19,6 +19,7 @@ defmodule CoingeckoMessengerWeb.Router do
 
     get "/", PageController, :index
     get "/webhook", PageController, :webhook
+    post "/webhook", PageController, :webhook
   end
 
   # Other scopes may use custom stacks.
