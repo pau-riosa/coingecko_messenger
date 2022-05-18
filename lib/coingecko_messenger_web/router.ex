@@ -18,8 +18,7 @@ defmodule CoingeckoMessengerWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    get "/webhook", PageController, :webhook
-    post "/webhook", PageController, :webhookpost
+    post "/webhook", PageController, :webhook
   end
 
   # Other scopes may use custom stacks.
