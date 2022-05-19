@@ -136,19 +136,9 @@ curl -X POST -H "Content-Type: application/json" -d '{
         "top_element_style": "compact",
         "elements": [
           {
-            "title": "Classic T-Shirt Collection",
+            "title": "",
             "subtitle": "See all our colors",
             "image_url": "https://originalcoastclothing.com/img/collection.png",          
-            "buttons": [
-              {
-                "title": "View",
-                "type": "web_url",
-                "url": "https://originalcoastclothing.com/collection",
-                "messenger_extensions": true,
-                "webview_height_ratio": "tall",
-                "fallback_url": "https://originalcoastclothing.com/"            
-              }
-            ]
           },
           {
             "title": "Classic White T-Shirt",

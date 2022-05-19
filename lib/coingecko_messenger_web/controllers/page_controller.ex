@@ -45,6 +45,8 @@ defmodule CoingeckoMessengerWeb.PageController do
     show_price_in_usd(payload, postback)
   end
 
+  def do_webhook(_), do: :ok
+
   def show_price_in_usd(payload, postback) do
     path =
       "https://api.coingecko.com/api/v3/coins/#{payload}/market_chart?vs_currency=usd&days=14"
