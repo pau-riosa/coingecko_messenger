@@ -19,9 +19,7 @@ defmodule CoingeckoMessengerWeb.PageController do
       resp(conn, 200, challenge)
     else
       Logger.error("verification failed, token mismatch.")
-
-      conn
-      |> resp(404, "verification failed, token mismatch")
+      resp(conn, 404, "verification failed, token mismatch")
     end
   end
 
@@ -38,7 +36,7 @@ defmodule CoingeckoMessengerWeb.PageController do
   def do_webhook(%{"postback" => %{"payload" => payload}} = postback) do
     case payload do
       "GET_STARTED" -> search_for_coins(postback)
-      "SEARCH_FOR_COINS" -> show_five_random_coins(postback)
+      "SEARCH_FOR_COINS" -> show_five_random_coins(postback) |> raise
       _ -> :ok
     end
   end
@@ -113,7 +111,7 @@ defmodule CoingeckoMessengerWeb.PageController do
 
     headers = [{"Content-Type", "application/json"}]
 
-    post(path, body, headers)
+    post(path, body, headers) |> Logger.info()
   end
 
   def show_five_random_coins(postback) do
