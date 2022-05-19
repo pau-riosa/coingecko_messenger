@@ -3,8 +3,8 @@ defmodule CoingeckoMessengerWeb.PageController do
 
   require Logger
 
-  @verification_token Application.compile_env(:coingecko_messenger, :verify_token)
-  @page_access_token Application.compile_env(:coingecko_messenger, :page_access_token)
+  @verification_token Application.get_env(:coingecko_messenger, :verify_token)
+  @page_access_token Application.get_env(:coingecko_messenger, :page_access_token)
 
   def index(conn, _params) do
     render(conn, "index.html")
