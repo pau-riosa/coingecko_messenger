@@ -8,9 +8,8 @@
 import Config
 
 config :coingecko_messenger,
-  verify_token:
-    System.get_env("VERIFY_TOKEN") ||
-      "LihGv2fR3vMsnBnue02Dnma8b2B+O/hpIBRwK1FW1UD9tcBOBhnSryBLFNaSFxDX"
+  verify_token: System.get_env("VERIFY_TOKEN"),
+  page_access_token: System.get_env("PAGE_ACCESS_TOKEN")
 
 config :coingecko_messenger,
   ecto_repos: [CoingeckoMessenger.Repo]
