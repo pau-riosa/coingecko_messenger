@@ -36,7 +36,7 @@ defmodule CoingeckoMessengerWeb.PageController do
   def do_webhook(%{"postback" => %{"payload" => payload}} = postback) do
     case payload do
       "GET_STARTED" -> search_for_coins(postback)
-      "SEARCH_FOR_COINS" -> show_five_random_coins(postback) |> raise
+      "SEARCH_FOR_COINS" -> show_five_random_coins(postback)
       _ -> :ok
     end
   end
@@ -111,7 +111,7 @@ defmodule CoingeckoMessengerWeb.PageController do
 
     headers = [{"Content-Type", "application/json"}]
 
-    post(path, body, headers) |> Logger.info()
+    post(path, body, headers)
   end
 
   def show_five_random_coins(postback) do
